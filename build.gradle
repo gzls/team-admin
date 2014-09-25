@@ -1,0 +1,25 @@
+dependencies {
+
+  compile(
+
+    libraries.'guava',
+    libraries.'log4j',
+    "joda-time:joda-time:2.4"
+    )
+
+  testCompile(libraries.'junit')
+  testCompile("com.alibaba:druid:1.0.8")
+  testCompile(libraries.'c3p0')
+  testCompile(libraries.'mysql-connector-java')
+}
+
+eclipse{
+    project {
+      buildCommand 'org.eclipse.jdt.core.javabuilder'
+      natures 'org.springsource.ide.eclipse.gradle.core.nature','org.eclipse.jdt.core.javanature'
+    }
+    classpath{
+      //defaultOutputDir = file('build/classes')
+      containers 'org.eclipse.jdt.launching.JRE_CONTAINER', 'org.springsource.ide.eclipse.gradle.classpathcontainer'
+    }
+}
